@@ -4,8 +4,6 @@ const displayDrinks = ({ drinks }) => {
   const section = get(".section-center"),
     title = get(".title");
 
-  console.log(drinks);
-
   if (!drinks) {
     //hide loading
     title.textContent = `sorry, no drinks matched your search.`;

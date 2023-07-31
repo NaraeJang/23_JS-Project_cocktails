@@ -7,7 +7,6 @@ const showDrinks = async (url) => {
 
   // display drinks
   const section = await displayDrinks(data);
-  console.log(section);
 };
 
 export default showDrinks;
