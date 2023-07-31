@@ -1,11 +1,13 @@
 import fetchDrinks from "./fetchDrinks.js";
-const showDrinks = async (url) => {
-  console.log(url);
+import displayDrinks from "./displayDrinks.js";
 
-  const data = await fetchDrinks(url);
-  console.log(data);
+const showDrinks = async (url) => {
   // fetch drinks
+  const data = await fetchDrinks(url);
+
   // display drinks
+  const section = await displayDrinks(data);
+  console.log(section);
 };
 
 export default showDrinks;
