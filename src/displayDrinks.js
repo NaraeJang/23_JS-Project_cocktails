@@ -36,7 +36,6 @@ const displayDrinks = ({ drinks }) => {
   title.textContent = ``;
   section.innerHTML = newDrinks;
 
-  console.log(section);
   return section;
 };
 
