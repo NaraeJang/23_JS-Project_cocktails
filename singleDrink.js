@@ -1,13 +1,19 @@
 import fetchDrinks from "./src/fetchDrinks.js";
-
 import displaySingleDrink from "./src/displaySingleDrink.js";
 
-const id = localStorage.getItem("drink");
-const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`;
+const presentDrink = async () => {
+  const id = localStorage.getItem("drink");
+  if (!id) {
+    window.location.replace("index.html");
+  } else {
+    const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`;
+    const data = await fetchDrinks(url);
 
-window.addEventListener("DOMContentLoaded", async () => {
-  const data = await fetchDrinks(url);
+    //   display drink
+    displaySingleDrink(data);
+  }
+};
 
-  //   display drink
-  displaySingleDrink(data);
+window.addEventListener("DOMContentLoaded", () => {
+  presentDrink();
 });
